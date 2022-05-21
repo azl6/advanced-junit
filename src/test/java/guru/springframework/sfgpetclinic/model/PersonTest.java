@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("model")
-class PersonTest implements ModelTests {
+class PersonTest {
 
     @Test
     void groupedAssertions() {
@@ -29,17 +29,19 @@ class PersonTest implements ModelTests {
                 () -> assertEquals( "Joe", person.getFirstName(), "First name failed!"),
                 () -> assertEquals( "Buck", person.getLastName(), "Last name failed!"));
     }
+}
 
+class PersonTestRepeated implements ModelTests {
     @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} - {totalRepetitions}")
     @DisplayName("My Repeated Test")
-    @Test
     void myRepeatedTest() {
         //todo - impl
     }
 
     @RepeatedTest(5)
-    void myRepeatedTestWithDI(TestInfo testInfo, RepetitionInfo repetitionInfo) {
-        System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
-
+    @DisplayName("My assignment repeated test")
+    void myAssignmentRepeated(){
+        System.out.println("Reached personTest");
     }
 }
+

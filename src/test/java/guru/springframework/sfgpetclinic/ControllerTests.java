@@ -8,7 +8,7 @@ import org.junit.jupiter.api.TestInstance;
 @Tag("controllers")
 public interface ControllerTests {
 
-    @BeforeAll
+    @BeforeAll //before all does need @TestInstance annotation
     default void beforeAll(){
         System.out.println("Lets do something here");
     }

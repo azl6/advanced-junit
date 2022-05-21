@@ -1,15 +1,13 @@
 package guru.springframework.sfgpetclinic;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Tag("model")
 public interface ModelTests {
 
-    @BeforeAll
-    default void beforeAll(){
-        System.out.println("Lets do something here");
+    @BeforeEach
+    default void beforeEach(TestInfo testInfo, RepetitionInfo repetitionInfo){
+        System.out.println("DISPLAY NAME: " + testInfo.getDisplayName());
+        System.out.println("REPETITION: " + repetitionInfo.getCurrentRepetition());
     }
 }
