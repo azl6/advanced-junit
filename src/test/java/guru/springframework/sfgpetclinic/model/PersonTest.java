@@ -31,6 +31,7 @@ class PersonTest {
     }
 }
 
+@Tag("modelRepeated")
 class PersonTestRepeated implements ModelTests {
     @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} - {totalRepetitions}")
     @DisplayName("My Repeated Test")
