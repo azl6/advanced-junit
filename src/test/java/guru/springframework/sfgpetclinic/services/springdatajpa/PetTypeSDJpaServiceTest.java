@@ -1,11 +1,14 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.junitextensions.TimingExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.*;
 //IT suffix = integration test
 //helps maven find which tests are integration tests
+@ExtendWith(TimingExtension.class)
 class PetTypeSDJpaServiceIT {
 
     @BeforeEach
